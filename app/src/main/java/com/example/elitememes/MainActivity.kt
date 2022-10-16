@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), ComponentCallbacks2 {
         button.performClick()
 
         val progressView = findViewById<ImageView>(R.id.progressView)
-        Glide.with(this).load(R.drawable.progress).into(progressView)
+        Glide.with(this).load(R.drawable.progres2).into(progressView)
     }
     private var url = "url";
     fun nextMeme(view: View) {

@@ -47,6 +47,7 @@
         app:layout_constraintLeft_toRightOf="@+id/sharebutton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:backgroundTint="@color/purple_700"
         tools:ignore="OnClick" />
 
     <Button
@@ -59,9 +60,10 @@
         android:onClick="shareMeme"
         android:shadowColor="#FFFFFF"
         android:text="@string/share"
-        android:textColor="#5BFFFA"
+        android:textColor="#FFFFFF"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:backgroundTint="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/button"
