@@ -32,20 +32,39 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="295dp"
+        android:layout_width="180dp"
         android:layout_height="77dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-black"
         android:onClick="nextMeme"
         android:shadowColor="#FFFFFF"
-        android:text="NEXT"
+        android:text="@string/next"
         android:textColor="#FFFFFF"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/sharebutton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/sharebutton"
+        android:layout_width="180dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-black"
+        android:onClick="shareMeme"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/share"
+        android:textColor="#5BFFFA"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="OnClick" />
 

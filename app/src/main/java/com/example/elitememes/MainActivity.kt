@@ -9,6 +9,7 @@ import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
 import org.json.JSONObject
 import android.content.ComponentCallbacks2
+import android.content.Intent
 import android.widget.Button
 
 class MainActivity : AppCompatActivity(), ComponentCallbacks2 {
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity(), ComponentCallbacks2 {
         val progressView = findViewById<ImageView>(R.id.progressView)
         Glide.with(this).load(R.drawable.progress).into(progressView)
     }
-
+    private var url = "url";
     fun nextMeme(view: View) {
         val progressView = findViewById<ImageView>(R.id.progressView)
         val imgView = findViewById<ImageView>(R.id.imageView)
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity(), ComponentCallbacks2 {
                 // Display the first 500 characters of the response string.
                 val obj = JSONObject(response)
                 val img = obj.getString("url")
+                this.url = img
                 Glide.with(this).load(img).into(imgView)
                 progressView.visibility = View.GONE
                 imgView.visibility = View.VISIBLE
@@ -47,6 +49,17 @@ class MainActivity : AppCompatActivity(), ComponentCallbacks2 {
 // Add the request to the RequestQueue.
         queue.add(stringRequest)
 
+    }
+
+    fun shareMeme(view: View) {
+        var temp = this.url.toString()
+//        println(temp)
+//        println(this.url)
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT,"Hey Checkout this meme $temp")
+        val chooser = Intent.createChooser(intent,"Share this meme")
+        startActivity(chooser)
     }
 
 
@@ -102,5 +115,6 @@ class MainActivity : AppCompatActivity(), ComponentCallbacks2 {
             }
         }
     }
+
 
 }
