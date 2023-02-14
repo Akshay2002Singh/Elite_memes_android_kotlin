@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(), ComponentCallbacks2 {
         val imgView = findViewById<ImageView>(R.id.imageView)
         progressView.visibility = View.VISIBLE
         imgView.visibility = View.INVISIBLE
-        val api: String = "https://meme-api.herokuapp.com/gimme"
+        val api: String = "https://meme-api.com/gimme"
         val queue = Volley.newRequestQueue(this)
 
 // Request a string response from the provided URL.
